@@ -1,0 +1,27 @@
+[ContentDisplay]
+UsePermissionsFormat=NumericFormat
+
+[DetailsMode]
+IconSize=22
+
+[FileDialogSize]
+2 screens: Height=564
+2 screens: Width=817
+
+[General]
+Version=202
+ViewPropsTimestamp=2025,8,8,17,43,44.04
+
+[IconsMode]
+IconSize=48
+PreviewSize=48
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,librsvg,svgthumbnail,gdk-pixbuf-thumbnailer
