@@ -10,10 +10,10 @@ source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 source "$INSTALL_SCRIPTS_DIR/package-config.sh"
 
 echo "Copying config files to ~/.config"
-cp -r ../.config ~/.config
+cp -r $DIR/.config ~/.config
 
 echo "Copying scripts files to ~/.scripts"
-cp -r ../.scripts ~/.scripts
+cp -r $DIR/.scripts ~/.scripts
 
 echo "Copying etc to /etc"
-sudo cp -r ../etc /etc
+sudo cp -r $DIR/etc /etc
