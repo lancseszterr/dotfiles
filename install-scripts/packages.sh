@@ -2,10 +2,11 @@
 
 sudo pacman -Syu limine limine-mkinitcpio-hook
 
-sudo pacman -Sy zed zsh vlc neovim unzip ufw brave dolphin powertop git fzf gimp kvantum \
-    qt6ct ristretto ark \
-    hyprland hyprsunset hyprlock hyprshot swww wl-clipboard wlogout rofi \
+sudo pacman -Sy hyprland hyprsunset hyprlock hyprshot swww wl-clipboard wlogout rofi \
     linux-cachyos-bore-lto linux-cachyos-bore-lto-headers ly
+
+sudo pacman -Sy zed zsh vlc neovim unzip ufw brave dolphin powertop git fzf gimp kvantum \
+    qt6ct ristretto ark pipewire-jack \
 
 lspci | grep VGA | grep Intel
 if [ $? -e 0 ]; then
