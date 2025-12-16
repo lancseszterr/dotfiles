@@ -22,7 +22,6 @@
     "battery",
     "network",
     "hyprland/language",
-    // "custom/power"
   ],
 
   "wlr/taskbar": {
@@ -124,12 +123,12 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "hyprctl dispatch exec '[float; size 1280 720]' kitty ~/.scripts/bluetooth.sh",
+    "on-click": "hyprctl dispatch exec '[float; size 1280 720]' kitty ~/scripts/bluetooth.sh",
   },
   "custom/spotify": {
     "interval": 1,
     "return-type": "json",
-    "exec": "~/.scripts/get-current-music.sh",
+    "exec": "~/scripts/get-current-music.sh",
     "on-click": "playerctl play-pause",
     "escape": true,
     "max-length": 32,
@@ -137,11 +136,11 @@
   "custom/volume": {
     "format": "{}",
     "return-type": "json",
-    "on-scroll-up": "~/.scripts/waybar-volume.sh --scroll-up",
-    "on-scroll-down": "~/.scripts/waybar-volume.sh --scroll-down",
-    "on-click": "~/.scripts/waybar-volume.sh --click",
+    "on-scroll-up": "~/scripts/waybar-volume.sh --scroll-up",
+    "on-scroll-down": "~/scripts/waybar-volume.sh --scroll-down",
+    "on-click": "~/scripts/waybar-volume.sh --click",
     "interval": 1,
-    "exec": "~/.scripts/waybar-volume.sh",
+    "exec": "~/scripts/waybar-volume.sh",
     "restart-interval": 1,
   },
   "hyprland/language": {
