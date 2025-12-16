@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # https://wiki.cachyos.org/features/optimized_repos/
 

@@ -29,6 +29,11 @@ if [ $? -ne 0 ]; then
     echo "Failed configure some packages"
 fi
 
+./firewall.sh
+if [ $? -ne 0 ]; then
+    echo "Failed to set some firewall rules"
+fi
+
 echo "Copying config files to ~/.config"
 cp -r ../.config ~/.config
 
