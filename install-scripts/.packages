@@ -43,6 +43,7 @@ kvantum
 qt6ct
 ristretto
 ark
+xorg-xinit
 xorg-xauth
 xorg-xwayland
 xorg-fonts-encodings
