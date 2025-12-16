@@ -43,7 +43,7 @@ kvantum
 qt6ct
 ristretto
 ark
-xorg-auth
+xorg-xauth
 xorg-xwayland
 xorg-fonts-encodings
 xdg-desktop-portal
