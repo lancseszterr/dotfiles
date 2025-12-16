@@ -4,30 +4,30 @@ sudo pacman -Sy
 
 # No fricking idea what is needed for AMD, dont't even know if the above will even work XDDD needs testing T.T
 
-mapfile -t packages < <(grep -v '^#' ".packages" | grep -v '^$')
-sudo pacman -S --noconfirm --needed "${packages[@]}"
+mapfile -t packages_base < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages" | grep -v '^$')
+sudo pacman -S --noconfirm --needed "${packages_base[@]}"
 
 
 
 if lspci | grep VGA | grep Intel; then
-    mapfile -t packages_intel < <(grep -v '^#' ".packages-intel" | grep -v '^$')
+    mapfile -t packages_intel < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-intel" | grep -v '^$')
     sudo pacman -S --noconfirm --needed "${packages_intel[@]}"
 fi
 
 if lspci | grep VGA | grep Nvidia; then
-    mapfile -t packages_nvidia < <(grep -v '^#' ".packages-nvidia" | grep -v '^$')
+    mapfile -t packages_nvidia < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-nvidia" | grep -v '^$')
     sudo pacman -S --noconfirm --needed "${packages_nvidia[@]}"
 fi
 
 
 
-if lspci | grep Bluetooth; then
-    mapfile -t packages-bluetooth < <(grep -v '^#' ".packages-bluetooth" | grep -v '^$')
-    sudo pacman -S --noconfirm --needed "${bluetooth[@]}"
+if ls /sys/class/bluetooth/ > /dev/null 2>&1; then
+    mapfile -t packages-bluetooth < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-bluetooth" | grep -v '^$')
+    sudo pacman -S --noconfirm --needed "${packages-bluetooth[@]}"
 fi
 
 
-if lspci | grep VGA | grep Nvidia; then
-    mapfile -t packages-wifi < <(grep -v '^#' ".packages-wifi" | grep -v '^$')
+if cat /proc/net/wireless > /dev/null 2>&1; then
+    mapfile -t packages-wifi < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-wifi" | grep -v '^$')
     sudo pacman -S --noconfirm --needed "${packages-wifi[@]}"
 fi
