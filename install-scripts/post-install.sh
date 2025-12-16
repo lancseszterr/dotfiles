@@ -1,23 +1,19 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit 1
-fi
 
-./pacman.sh
+sudo ./pacman.sh
 if [ $? -ne 0 ]; then
     echo "Failed to change pacman config"
 fi
 
-./cachyos-repo.sh
+sudo ./cachyos-repo.sh
 if [ $? -ne 0 ]; then
     echo "Failed to add Cachyos repositories"
     echo "Exiting ..."
     exit 2
 fi
 
-./packages.sh
+sudo ./packages.sh
 if [ $? -ne 0 ]; then
     echo "Failed to install some packages"
     echo "Exiting ..."
