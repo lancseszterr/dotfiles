@@ -21,7 +21,12 @@ fi
 
 ./mime-types.sh
 if [ $? -ne 0 ]; then
-    echo "Failed to set mime-types"
+    echo "Failed to set some mime-types"
+fi
+
+./package-config.sh
+if [ $? -ne 0 ]; then
+    echo "Failed configure some packages"
 fi
 
 echo "Copying config files to ~/.config"

@@ -1,0 +1,157 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 40,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/separator",
+    "wlr/taskbar",
+    "custom/separator",
+    "custom/spotify",
+  ],
+  "modules-center": ["clock", "custom/middot", "hyprland/window"],
+  "modules-right": [
+    "tray",
+    "custom/separator",
+    "bluetooth",
+    "memory",
+    "cpu",
+    "custom/volume",
+    "battery",
+    "network",
+    "hyprland/language",
+    // "custom/power"
+  ],
+
+  "wlr/taskbar": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "on-click": "minimize-raise",
+  },
+
+  "tray": {},
+
+  "custom/separator": {
+    "format": "|",
+  },
+
+  "image": {
+    "path": "~/.config/waybar/arch-linux.png",
+    "size": 20,
+    "interval": 5,
+  },
+  "clock": {
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "format": "{:%H:%M}",
+  },
+
+  "cpu": {
+    "format": "💻 {usage}%",
+    "interval": 1,
+    "on-click": "hyprctl dispatch exec '[float; size 1280 720]' kitty btop",
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+  },
+
+  "custom/middot": {
+    "format": "·",
+    "tooltip": false,
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "tooltip": true,
+    "max-length": 50,
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "󰌽",
+      "2": "󰮯",
+      "3": "",
+      "4": "󰊤",
+      "5": "󰣇",
+      "urgent": "",
+      "active": "",
+      "default": "",
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Battery at 30%'",
+      "on-discharging-critical": "notify-send -u critical 'Battery at 15%'",
+      "on-charging-100": "notify-send -u normal 'Battery Full!'",
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰂄 {capacity}%",
+    "format-warning": "󰂃 {capacity}%",
+    "tooltip": true,
+    "tooltip-format": "{time} - {capacity}% @ {power}W",
+    "format-time": "{H}:{M}",
+  },
+  "network": {
+    "format-wifi": "ᯤ {ipaddr}",
+    "format-ethernet": "",
+    "format-disconnected": " ",
+    "tooltip-format": "Connected to {essid}",
+    "tooltip-format-ethernet": "{ifname} ",
+    "on-click": "hyprctl dispatch exec '[float; size 1280 720]' kitty impala",
+  },
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": "󰂯",
+    "format-disabled": "󰂲", // an empty format will hide the module
+    "format-connected": "󰂱",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "hyprctl dispatch exec '[float; size 1280 720]' kitty ~/.scripts/bluetooth.sh",
+  },
+  "custom/spotify": {
+    "interval": 1,
+    "return-type": "json",
+    "exec": "~/.scripts/get-current-music.sh",
+    "on-click": "playerctl play-pause",
+    "escape": true,
+    "max-length": 32,
+  },
+  "custom/volume": {
+    "format": "{}",
+    "return-type": "json",
+    "on-scroll-up": "~/.scripts/waybar-volume.sh --scroll-up",
+    "on-scroll-down": "~/.scripts/waybar-volume.sh --scroll-down",
+    "on-click": "~/.scripts/waybar-volume.sh --click",
+    "interval": 1,
+    "exec": "~/.scripts/waybar-volume.sh",
+    "restart-interval": 1,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-hu": "HU",
+    "format-en": "US",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next && hyprctl switchxkblayout mchose-jet75-ii-keyboard next",
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "wlogout",
+  },
+}
