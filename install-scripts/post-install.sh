@@ -34,3 +34,6 @@ cp -r ../.config ~/.config
 
 echo "Copying scripts files to ~/.scripts"
 cp -r ../.scripts ~/.scripts
+
+echo "Copying etc to /etc"
+cp -r ../etc /etc
