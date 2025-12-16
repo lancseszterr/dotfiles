@@ -30,3 +30,6 @@ fi
 
 echo "Copying config files to ~/.config"
 cp -r ../.config ~/.config
+
+echo "Copying scripts files to ~/.scripts"
+cp -r ../.scripts ~/.scripts
