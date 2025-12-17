@@ -5,6 +5,7 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
+set -eEo pipefail
 
 export DIR=$(pwd)
 export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
