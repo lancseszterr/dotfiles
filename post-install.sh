@@ -16,12 +16,14 @@ sudo cp -r $DIR/etc /etc
 echo "Copying boot to /boot"
 sudo cp -r $DIR/boot /boot
 
+
 source "$INSTALL_SCRIPTS_DIR/limine.sh"
 source "$INSTALL_SCRIPTS_DIR/pacman.sh"
 source "$INSTALL_SCRIPTS_DIR/cachyos-repo.sh"
 source "$INSTALL_SCRIPTS_DIR/packages.sh"
 source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 source "$INSTALL_SCRIPTS_DIR/package-config.sh"
+
 
 echo "Copying config files to ~/.config"
 cp -r $DIR/.config ~/.config
