@@ -16,6 +16,7 @@ sudo cp -r $DIR/etc /etc
 echo "Copying boot to /boot"
 sudo cp -r $DIR/boot /boot
 
+source "$INSTALL_SCRIPTS_DIR/limine.sh"
 source "$INSTALL_SCRIPTS_DIR/pacman.sh"
 source "$INSTALL_SCRIPTS_DIR/cachyos-repo.sh"
 source "$INSTALL_SCRIPTS_DIR/packages.sh"
