@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$EUID" -eq 0 ]; then
+    echo "Please don't run as root or with sudo"
+    exit 1
+fi
+
+
 export DIR=$(pwd)
 export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
 
