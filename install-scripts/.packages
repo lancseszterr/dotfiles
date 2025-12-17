@@ -24,6 +24,8 @@ wl-clipboard
 wlogout
 rofi
 rofi-emoji
+desktop-file-utils
+shared-mime-info
 linux-cachyos-bore-lto
 linux-cachyos-bore-lto-headers
 ly

@@ -17,3 +17,6 @@ cp -r $DIR/.scripts ~/.scripts
 
 echo "Copying etc to /etc"
 sudo cp -r $DIR/etc /etc
+
+echo "Copying boot to /boot"
+sudo cp -r $DIR/boot /boot
