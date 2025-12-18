@@ -12,12 +12,12 @@ export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
 
 sudo mkdir -p /etc/{ly,default}
 echo "Copying etc to /etc"
-sudo cp -r $DIR/etc /etc
+sudo cp -r $DIR/etc/* /etc
 sudo chown root:root /etc/ly/config.ini
 sudo chown root:root /etc/default/limine
 
 echo "Copying boot to /boot"
-sudo cp -r $DIR/boot /boot
+sudo cp -r $DIR/boot/* /boot
 sudo chown root:root /boot/limine.conf
 
 
@@ -31,7 +31,7 @@ source "$INSTALL_SCRIPTS_DIR/package-config.sh"
 
 mkdir -p .config/{btop,cava,dunst,hypr,kitty,qt6ct,vesktop,waybar,wlogout,zed}
 echo "Copying config files to ~/.config"
-cp -r $DIR/.config ~/.config
+cp -r $DIR/.config/* ~/.config
 
 echo "Copying scripts files to ~/.scripts"
-cp -r $DIR/.scripts ~/.scripts
+cp -r $DIR/.scripts/* ~/.scripts
