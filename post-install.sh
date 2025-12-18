@@ -10,7 +10,7 @@ set -eEo pipefail
 export DIR=$(pwd)
 export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
 
-
+sudo mkdir /etc/{ly,default}
 echo "Copying etc to /etc"
 sudo cp -rf $DIR/etc /etc
 sudo chown root:root /etc/ly/config.ini
@@ -29,6 +29,7 @@ source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 source "$INSTALL_SCRIPTS_DIR/package-config.sh"
 
 
+mkdir .config/{btop,cava,dunst,hypr,kitty,qt6ct,vesktop,waybar,wlogout,zed}
 echo "Copying config files to ~/.config"
 cp -rf $DIR/.config ~/.config
 
