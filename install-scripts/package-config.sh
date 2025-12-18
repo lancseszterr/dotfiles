@@ -26,3 +26,5 @@ sudo sed -i 's|^\(auth\s\+\[default=die\]\s\+pam_faillock.so\)\s\+authfail.*$|\1
 xdg-user-dirs-update
 
 systemctl --user enable pipewire pipewire-pulse wireplumber
+
+touch .config/mimeapps.list

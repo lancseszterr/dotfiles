@@ -24,13 +24,14 @@ source "$INSTALL_SCRIPTS_DIR/limine.sh"
 source "$INSTALL_SCRIPTS_DIR/pacman.sh"
 source "$INSTALL_SCRIPTS_DIR/cachyos-repo.sh"
 source "$INSTALL_SCRIPTS_DIR/packages.sh"
-source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 source "$INSTALL_SCRIPTS_DIR/package-config.sh"
+source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 
 
 mkdir -p .config/{btop,cava,dunst,hypr,kitty,qt6ct,vesktop,waybar,wlogout,zed}
 echo "Copying config files to ~/.config"
 cp -r $DIR/.config/* ~/.config
 
+mkdir -p ~/.scripts
 echo "Copying scripts files to ~/.scripts"
 cp -r $DIR/.scripts/* ~/.scripts
