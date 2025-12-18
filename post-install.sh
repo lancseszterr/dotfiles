@@ -12,10 +12,13 @@ export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
 
 
 echo "Copying etc to /etc"
-sudo cp -r $DIR/etc /etc
+sudo cp -rf $DIR/etc /etc
+sudo chown root:root /etc/ly/config.ini
+sudo chown root:root /etc/default/limine
 
 echo "Copying boot to /boot"
-sudo cp -r $DIR/boot /boot
+sudo cp -rf $DIR/boot /boot
+sudo chown root:root /boot/limine.conf
 
 
 source "$INSTALL_SCRIPTS_DIR/limine.sh"
@@ -27,7 +30,7 @@ source "$INSTALL_SCRIPTS_DIR/package-config.sh"
 
 
 echo "Copying config files to ~/.config"
-cp -r $DIR/.config ~/.config
+cp -rf $DIR/.config ~/.config
 
 echo "Copying scripts files to ~/.scripts"
-cp -r $DIR/.scripts ~/.scripts
+cp -rf $DIR/.scripts ~/.scripts

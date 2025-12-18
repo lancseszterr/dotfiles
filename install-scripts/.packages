@@ -34,6 +34,7 @@ linux-cachyos-bore-lto
 linux-cachyos-bore-lto-headers
 ly
 neovim
+pacman-contrib
 pipewire
 pipewire-alsa
 pipewire-jack
