@@ -4,4 +4,5 @@
 
 curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o $DIR/cachyos-repo.tar.xz
 tar xvf $DIR/cachyos-repo.tar.xz
-sudo $DIR/cachyos-repo/cachyos-repo.sh
+cd $DIR/cachyos-repo
+sudo ./cachyos-repo.sh
