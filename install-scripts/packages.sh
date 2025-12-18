@@ -22,12 +22,12 @@ fi
 
 
 if ls /sys/class/bluetooth/ > /dev/null 2>&1; then
-    mapfile -t packages-bluetooth < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-bluetooth" | grep -v '^$')
-    sudo pacman -S --noconfirm --needed "${packages-bluetooth[@]}"
+    mapfile -t packages_bluetooth < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-bluetooth" | grep -v '^$')
+    sudo pacman -S --noconfirm --needed "${packages_bluetooth[@]}"
 fi
 
 
 if cat /proc/net/wireless > /dev/null 2>&1; then
-    mapfile -t packages-wifi < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-wifi" | grep -v '^$')
-    sudo pacman -S --noconfirm --needed "${packages-wifi[@]}"
+    mapfile -t packages_wifi < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-wifi" | grep -v '^$')
+    sudo pacman -S --noconfirm --needed "${packages_wifi[@]}"
 fi
