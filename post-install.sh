@@ -14,7 +14,6 @@ sudo mkdir -p /etc/{ly,default}
 echo "Copying etc to /etc"
 sudo cp -r $DIR/etc/* /etc
 sudo chown root:root /etc/ly/config.ini
-sudo chown root:root /etc/default/limine
 
 echo "Copying boot to /boot"
 sudo cp -r $DIR/boot/* /boot

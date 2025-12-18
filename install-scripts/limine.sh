@@ -8,3 +8,5 @@ ENABLE_SORT=no
 FIND_BOOTLOADERS=yes
 QUIET_MODE=yes
 EOF
+
+sudo chown root:root /etc/default/limine
