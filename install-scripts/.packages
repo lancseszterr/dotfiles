@@ -60,6 +60,8 @@ wl-clipboard
 wlogout
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
+xdg-user-dirs
+xdg-utils
 xorg-fonts-encodings
 xorg-xauth
 xorg-xinit
