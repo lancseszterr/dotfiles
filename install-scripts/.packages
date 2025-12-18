@@ -19,8 +19,11 @@ gimp
 git
 git
 gparted
+gtk3
+gtk4
 hyprland
 hyprlock
+hyprpolkitagent
 hyprshot
 hyprsunset
 kitty
@@ -36,10 +39,14 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 playerctl
+polkit
+polkit-qt6
 power-profiles-daemon
 powertop
 qbittorrent
+qt5-wayland
 qt6ct
+qt6-wayland
 qt6-wayland
 ristretto
 rofi
@@ -47,6 +54,7 @@ rofi-emoji
 shared-mime-info
 spotify-launcher
 swww
+ttf-jetbrains-mono-nerd
 ufw
 unzip
 vlc
