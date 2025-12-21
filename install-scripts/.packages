@@ -10,6 +10,7 @@ curl
 desktop-file-utils
 dkms
 dolphin
+duf
 egl-gbm
 egl-wayland
 egl-x11

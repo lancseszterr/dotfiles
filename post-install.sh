@@ -29,9 +29,12 @@ source "$INSTALL_SCRIPTS_DIR/mime-types.sh"
 
 
 mkdir -p .config/{btop,cava,dunst,hypr,kitty,qt6ct,vesktop,waybar,wlogout,zed}
-echo "Copying config files to ~/.config"
-cp -r $DIR/.config/* ~/.config
+echo "Copying config files to $HOME/.config"
+cp -r $DIR/.config/* $HOME/.config
 
 mkdir -p ~/.scripts
-echo "Copying scripts files to ~/.scripts"
-cp -r $DIR/.scripts/* ~/.scripts
+echo "Copying scripts files to $HOME/.scripts"
+cp -r $DIR/.scripts/* $HOME/.scripts
+
+echo "Copying user specific files to $HOME"
+cp -r $DIR/home $HOME
