@@ -10,16 +10,23 @@ set -eEo pipefail
 export DIR=$(pwd)
 export INSTALL_SCRIPTS_DIR=$DIR/install-scripts
 
-sudo mkdir -p /etc/{ly,default}
+sudo mkdir -p /etc/{ly,default,initcpio,initcpio/post}
 echo "Copying etc to /etc"
 sudo cp -r $DIR/etc/* /etc
+
 sudo chown root:root /etc/ly/config.ini
+sudo chmod 600 /etc/ly/config.ini
+
+sudo chown root:root /etc/initcpio/post/kernel-sbctl
+sudo chmod 700 /etc/initcpio/post/kernel-sbctl
+
 
 echo "Copying boot to /boot"
 sudo cp -r $DIR/boot/* /boot
 sudo chown root:root /boot/limine.conf
 
 
+source "$INSTALL_SCRIPTS_DIR/secure-boot.sh"
 source "$INSTALL_SCRIPTS_DIR/limine.sh"
 source "$INSTALL_SCRIPTS_DIR/pacman.sh"
 source "$INSTALL_SCRIPTS_DIR/cachyos-repo.sh"
