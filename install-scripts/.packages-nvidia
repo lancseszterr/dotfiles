@@ -1,5 +1,7 @@
+lib32-opencl-nvidia
 linux-cachyos-bore-lto-nvidia
-nvidia-dkms
+nvidia-open-dkms
+nvidia-settings
 nvidia-utils
 nvtop
 opencl-nvidia
