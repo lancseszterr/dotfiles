@@ -1,5 +1,7 @@
 #!/bin/bash
 
+su -l $1
+
 if [ "$EUID" -eq 0 ]; then
     echo "Please don't run as root or with sudo"
     exit 1
