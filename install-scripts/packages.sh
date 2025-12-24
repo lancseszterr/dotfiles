@@ -26,8 +26,15 @@ if ls /sys/class/bluetooth/ > /dev/null 2>&1; then
     sudo pacman -S --noconfirm --needed "${packages_bluetooth[@]}"
 fi
 
-
 if cat /proc/net/wireless > /dev/null 2>&1; then
     mapfile -t packages_wifi < <(grep -v '^#' "$INSTALL_SCRIPTS_DIR/.packages-wifi" | grep -v '^$')
     sudo pacman -S --noconfirm --needed "${packages_wifi[@]}"
 fi
+
+
+
+if cat /proc/cpuinfo | grep vendor_id | grep Intel > /dev/null 2>&1; then
+    sudo pacman -Sy intel-ucode
+fi
+
+# No idea for amd, probably grep Amd at the end, needs confirmation and testing
